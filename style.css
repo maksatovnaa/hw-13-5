@@ -1,0 +1,77 @@
+header{
+    display: flex;
+    flex-direction: row;
+    gap: 900px;
+    background-color: rgb(55, 54, 54);
+    color: white;
+}
+
+.burger{
+    width: 30px;
+    height: 30px;
+    display: none;
+
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    gap:50px;   
+    margin-left: 200px;
+}
+
+.book{
+    width: 180px;
+    margin-left: 35px;
+    margin-top: 30px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border: 1px solid gray;
+}
+
+@media screen and (max-width:600px) {
+    
+    .container{
+        justify-content: center;
+    }
+
+    nav{
+        display: none;
+      }
+      .burger{
+        display: block;
+        z-index: 2;
+      }
+      header{
+        justify-content: space-between;
+        gap: 0px;
+        z-index: 0;
+      }
+      .active{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(55, 54, 54);
+        width: 200px;
+        position: absolute;
+        right: 0;
+        top:0;
+        gap:10px;
+        padding-top:50px;
+        padding-left:20px;
+        z-index: 1;
+      }
+      .burger-active{
+        content: url('burger-bar.png');
+      }
+      
+    }
