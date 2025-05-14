@@ -4,8 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BookNest - Rent Books</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
 </head>
+<style>
+  header{
+    display: flex;
+    flex-direction: row;
+    gap: 900px;
+    background-color: rgb(55, 54, 54);
+    color: white;
+    height: 80px;
+}
+
+.burger{
+    width: 30px;
+    height: 30px;
+    display: none;
+
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    gap:50px;   
+    margin-left: 200px;
+}
+
+.book{
+    width: 150px;
+    height: 250px;
+    margin-left: 25px;
+    margin-top: 30px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 500px;
+    border: 1px solid gray;
+}
+
+@media screen and (max-width:600px) {
+    
+    .container{
+        justify-content: center;
+    }
+
+    nav{
+        display: none;
+      }
+      .burger{
+        display: block;
+        z-index: 2;
+      }
+      header{
+        justify-content: space-between;
+        gap: 0px;
+        z-index: 0;
+      }
+      .active{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(55, 54, 54);
+        width: 200px;
+        position: absolute;
+        right: 0;
+        top:0;
+        gap:10px;
+        padding-top:50px;
+        padding-left:20px;
+        z-index: 1;
+      }
+      .burger-active{
+        content: url('burger-bar.png');
+      }
+      
+    }
+
+</style>
 <body>
 
   <header>  
@@ -13,7 +96,8 @@
     <nav>
       <p>Home</p>
       <p>Browse</p>
-      <p>Cart (5)</p>
+      <p >Cart (5)</p>
+      <div id="cart" style="position:absolute; top: 50px; left: 1173px;"></div>
     </nav>
     <img src="burger-bar.png" class="burger">
   </header>
@@ -115,12 +199,7 @@
       
 </div>
 
-<div id="cart" style="position:absolute; top: 60px; left: 1170px;"></div>
 
-<div class="cart" style="margin: 30px; padding: 20px; border: 1px solid gray; width: 300px;">
-  <h2>Your Rental Cart</h2>
-  <div id="cartContent" style="display: flex; flex-direction: column; gap: 20px;"></div>
-</div>
 
   <script src="script.js"></script>
 </body>
